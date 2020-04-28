@@ -49,7 +49,7 @@ var obj = new Proxy({}, {
 - **construct(target, args)**：拦截 Proxy 实例作为构造函数调用的操作
   比如`new proxy(...args)`
 
-## get
+# Get
 
 ### 拦截读取
 
