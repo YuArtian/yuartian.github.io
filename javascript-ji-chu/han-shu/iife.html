@@ -1,0 +1,583 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IIFE · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="wei-tiao-yong-he-wei-di-gui.html" />
+    
+    
+    <link rel="prev" href="jian-tou-han-shu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前端有道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">JavaScript基础</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../gui-fan/">
+            
+                <a href="../gui-fan/">
+            
+                    
+                    规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../gui-fan/ming-ming-gui-ze-yu-ji-gou-ming-cheng.html">
+            
+                <a href="../gui-fan/ming-ming-gui-ze-yu-ji-gou-ming-cheng.html">
+            
+                    
+                    命名规则与机构名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../untitled/">
+            
+                <a href="../untitled/">
+            
+                    
+                    JS的执行环境
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../untitled/dui-he-zhan.html">
+            
+                <a href="../untitled/dui-he-zhan.html">
+            
+                    
+                    堆和栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../bian-yi-yuan-li/">
+            
+                <a href="../bian-yi-yuan-li/">
+            
+                    
+                    编译原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../bian-yi-yuan-li/jit.html">
+            
+                <a href="../bian-yi-yuan-li/jit.html">
+            
+                    
+                    JIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../bian-yi-yuan-li/chu-shi-hua-ji-chu-huan-jing.html">
+            
+                <a href="../bian-yi-yuan-li/chu-shi-hua-ji-chu-huan-jing.html">
+            
+                    
+                    初始化基础环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../bian-yi-yuan-li/ci-fa-fen-xi-fen-ci-scanner.html">
+            
+                <a href="../bian-yi-yuan-li/ci-fa-fen-xi-fen-ci-scanner.html">
+            
+                    
+                    词法分析/分词（Scanner）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../bian-yi-yuan-li/yu-fa-fen-xi-parser.html">
+            
+                <a href="../bian-yi-yuan-li/yu-fa-fen-xi-parser.html">
+            
+                    
+                    语法分析（Parser）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../ji-ben-lei-xing/">
+            
+                <a href="../ji-ben-lei-xing/">
+            
+                    
+                    基本类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../ji-ben-lei-xing/string.html">
+            
+                <a href="../ji-ben-lei-xing/string.html">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../ji-ben-lei-xing/symbol.html">
+            
+                <a href="../ji-ben-lei-xing/symbol.html">
+            
+                    
+                    Symbol
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../dui-xiang.html">
+            
+                <a href="../dui-xiang.html">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="jian-tou-han-shu.html">
+            
+                <a href="jian-tou-han-shu.html">
+            
+                    
+                    箭头函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.2" data-path="iife.html">
+            
+                <a href="iife.html">
+            
+                    
+                    IIFE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="wei-tiao-yong-he-wei-di-gui.html">
+            
+                <a href="wei-tiao-yong-he-wei-di-gui.html">
+            
+                    
+                    尾调用和尾递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../ji-cheng.html">
+            
+                <a href="../ji-cheng.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../set-he-map.html">
+            
+                <a href="../set-he-map.html">
+            
+                    
+                    Set 和 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../kuo-zhan-yun-suan-fu.html">
+            
+                <a href="../kuo-zhan-yun-suan-fu.html">
+            
+                    
+                    扩展运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../proxy.html">
+            
+                <a href="../proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >IIFE</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#iife"><b>1. </b>IIFE</a></li><ul><li><span class="title-icon "></span><a href="#&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;"><b>1.1. </b>&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x4F5C;&#x7528;"><b>1.2. </b>&#x4F5C;&#x7528;</a></li></ul></ul></div><a href="#iife" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="iife"><a name="iife" class="anchor-navigation-ex-anchor" href="#iife"><i class="fa fa-link" aria-hidden="true"></i></a>1. IIFE</h1>
+<h2 id="&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;"><a name="&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</h2>
+<p>JavaScript &#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5706;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5706;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x653E;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-text">(a = 3)
+</code></pre>
+<p>&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6574;&#x4E2A;&#x8BED;&#x53E5;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6700;&#x7EC8;&#x8F93;&#x51FA; 3</p>
+<p>&#x5982;&#x679C;&#x5728;&#x5C0F;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x653E;&#x4E0A;&#x4E00;&#x6BB5;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-text">(function () { //statements})
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x5C0F;&#x62EC;&#x53F7;&#x4E4B;&#x95F4;&#x5B58;&#x653E;&#x7684;&#x5FC5;&#x987B;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x5728;&#x5C0F;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48; V8 &#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x770B;&#x6210;&#x662F;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6267;&#x884C;&#x65F6;&#x5B83;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</p>
+<p>&#x5B58;&#x653E;&#x5728;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x51FD;&#x6570;&#x4FBF;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5B83;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x76F4;&#x63A5;&#x5728;&#x8868;&#x8FBE;&#x5F0F;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x62EC;&#x53F7;&#xFF0C;&#x8FD9;&#x5C31;&#x79F0;&#x4E3A; <strong>&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;IIFE&#xFF09;</strong></p>
+<pre><code class="lang-text">(function () {
+    //statements
+})()
+</code></pre>
+<h2 id="&#x4F5C;&#x7528;"><a name="&#x4F5C;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4F5C;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4F5C;&#x7528;</h2>
+<p>&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x7ACB;&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5; V8 &#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x4E3A;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</p>
+<p>&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x6C61;&#x67D3;&#x73AF;&#x5883;&#xFF0C;&#x51FD;&#x6570;&#x548C;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x8BBF;&#x95EE;&#x5230;</p>
+<p>&#x5728; ES6 &#x4E4B;&#x524D;&#xFF0C;JavaScript &#x4E2D;&#x6CA1;&#x6709;&#x79C1;&#x6709;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x591A;&#x4EBA;&#x5F00;&#x53D1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x4F60;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x8986;&#x76D6;&#x6389;&#x522B;&#x4EBA;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x7ACB;&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x6211;&#x4EEC;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x5C01;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x53D8;&#x91CF;&#x6C61;&#x67D3;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x7ACB;&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7ACB;&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E0D;&#x662F;&#x5B58;&#x50A8; IIFE &#x672C;&#x8EAB;&#xFF0C;&#x800C;&#x662F;&#x5B58;&#x50A8; IIFE &#x6267;&#x884C;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-text">var a = (function () {
+    return 1
+})()
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="jian-tou-han-shu.html" class="navigation navigation-prev " aria-label="Previous page: 箭头函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="wei-tiao-yong-he-wei-di-gui.html" class="navigation navigation-next " aria-label="Next page: 尾调用和尾递归">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IIFE","level":"2.6.2","depth":2,"next":{"title":"尾调用和尾递归","level":"2.6.3","depth":2,"path":"javascript-ji-chu/han-shu/wei-tiao-yong-he-wei-di-gui.md","ref":"javascript-ji-chu/han-shu/wei-tiao-yong-he-wei-di-gui.md","articles":[]},"previous":{"title":"箭头函数","level":"2.6.1","depth":2,"path":"javascript-ji-chu/han-shu/jian-tou-han-shu.md","ref":"javascript-ji-chu/han-shu/jian-tou-han-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","expandable-chapters","chapter-fold","splitter","anchor-navigation-ex"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript-ji-chu/han-shu/iife.md","mtime":"2020-04-28T03:27:59.700Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-28T04:22:40.589Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
