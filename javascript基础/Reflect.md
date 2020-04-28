@@ -11,7 +11,8 @@
   而`Reflect.has(obj, name)`和`Reflect.deleteProperty(obj, name)`让它们变成了函数行为
 - `Reflect`对象的方法与`Proxy`对象的方法一一对应
   不管`Proxy`怎么修改默认行为，你总可以在`Reflect`上获取默认行为
-- 
+
+
 
 
 
