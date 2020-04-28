@@ -16,7 +16,7 @@
 * [基本类型](javascript基础/基本类型/README.md)
   * [String](javascript基础/基本类型/string.md)
   * [Symbol](javascript基础/基本类型/symbol.md)
-* [对象](javascript基础/对象.md)
+* [对象](javascript基础/对象/README.md)
 * [函数](javascript基础/函数/README.md)
   * [箭头函数](javascript基础/函数/箭头函数.md)
   * [IIFE](javascript基础/函数/iife.md)
@@ -25,4 +25,5 @@
 * [Set 和 Map](javascript基础/Set和Map.md)
 * [扩展运算符](javascript基础/扩展运算符.md)
 * [Proxy](javascript基础/proxy.md)
+* [Reflect](javascript基础/Reflect.md)
 

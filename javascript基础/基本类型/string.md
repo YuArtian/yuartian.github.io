@@ -13,9 +13,39 @@
 * **startsWith\(\)**：返回布尔值，表示参数字符串是否在原字符串的头部
 * **endsWith\(\)**：返回布尔值，表示参数字符串是否在原字符串的尾部
 
-### 实现 includes 方法
+### 实现 indexOf 方法
 
+#### 简单版
 
+1. 正则
+
+   ```javascript
+   function indexOf(str, value) {
+   	let reg = new RegExp(`${value}`, 'gi');
+   	let result = reg(str);
+   	return result ? result.index : -1
+   }
+   ```
+
+   
+
+2. 循环
+
+   ```javascript
+   function indexOf(str, value){
+   	let strL = str.length
+   	let valueL = value.length
+   	
+   	for(let i=0; i <= strL-valueL; i++){
+   		if(str.slice(i, i + valueL) == value){
+   			return i
+   		}
+   	}
+     return -1
+   }
+   ```
+
+   
 
 
 
