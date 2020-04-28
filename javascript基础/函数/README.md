@@ -56,7 +56,7 @@ var foo = function (){
 new Function ([arg1[, arg2[, ...argN]],] functionBody)
 ```
 
-#### [箭头函数](jian-tou-han-shu.md)
+#### [箭头函数](箭头函数.md)
 
  ES6 允许使用“箭头”（`=>`）定义函数
 
