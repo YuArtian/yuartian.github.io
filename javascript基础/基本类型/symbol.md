@@ -42,7 +42,7 @@ Symbol 值不能与其他类型的值进行运算，会报错
 
 注意，`Symbol`函数前不能使用`new`命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。也就是说，由于 Symbol 值不是对象，所以不能添加属性。基本上，它是一种类似于字符串的数据类型
 
-### Symbol.prototype.description <a id="Symbol-prototype-description"></a>
+### Symbol.prototype.description
 
 创建 Symbol 的时候，可以添加一个描述
 
@@ -58,7 +58,7 @@ sym.description // "foo"
 
 ### 作为属性名的 Symbol
 
-Symbol 作为属性名时，不能使用 点 运算符
+Symbol 作为属性名时，不能使用 点 运算符，只能用 [Symbol] 进行取值
 
 ## 遍历
 

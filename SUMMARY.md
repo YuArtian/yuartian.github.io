@@ -27,3 +27,8 @@
 * [Proxy](javascript基础/proxy.md)
 * [Reflect](javascript基础/Reflect.md)
 
+## 设计模式与前端架构
+
+- [设计模式](设计模式与前端架构/设计模式/README.md)
+  - [观察者模式](设计模式与前端架构/设计模式/观察者模式/README.md)
+    - [发布订阅模式](设计模式与前端架构/设计模式/观察者模式/发布订阅模式.md)
