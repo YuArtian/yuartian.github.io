@@ -1,6 +1,10 @@
 # MVVM
 
+MVVM是 Model-View-ViewModel （模型-视图-视图模型）的简写，是一个软件架构设计模式
 
+MVVM 的出现促进了 GUI 前端开发与后端业务逻辑的分离，极大地提高了前端开发效率
+
+MVVM 的核心是 ViewModel 层，它就像是一个中转站（value converter），负责转换 Model 中的数据对象来让数据变得更容易管理和使用，该层向上与视图层进行双向数据绑定，向下与 Model 层通过接口请求进行数据交互，起呈上启下作用
 
 # 双向绑定
 
@@ -41,6 +45,8 @@
 
 ### Object.defineProperty()
 
+> https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf
+
 #### 简单版本
 
 ```html
@@ -71,7 +77,9 @@ const obj = {};
 </script>
 ```
 
-#### 结合发布-订阅模式
+#### Vue的实现（结合发布-订阅模式）
+
+Vue 完整实现详情，请看 [Vue实现](../框架/Vue/实现一个Vue.md)
 
 ```html
 <body>
@@ -249,4 +257,33 @@ const obj = {};
 
 
 ### Proxy
+
+#### 简单版
+
+```js
+const input = document.getElementById('input');
+const p = document.getElementById('p');
+const obj = {};
+
+const newObj = new Proxy(obj, {
+  get: function(target, key, receiver) {
+    console.log(`getting ${key}!`);
+    return Reflect.get(target, key, receiver);
+  },
+  set: function(target, key, value, receiver) {
+    console.log(target, key, value, receiver);
+    if (key === 'text') {
+      input.value = value;
+      p.innerHTML = value;
+    }
+    return Reflect.set(target, key, value, receiver);
+  },
+});
+
+input.addEventListener('keyup', function(e) {
+  newObj.text = e.target.value;
+});
+```
+
+
 
