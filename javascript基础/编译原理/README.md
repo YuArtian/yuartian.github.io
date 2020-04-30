@@ -10,7 +10,7 @@ JS 引擎是用来执行 JS 代码的。那到底代码是如何被执行的呢�
 
 以 Chrome V8 引擎 为例子，它的工作流程图大致如下：
 
-![V8&#x5F15;&#x64CE;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;](../../.gitbook/assets/v8-gong-zuo-liu-cheng.jpg)
+![V8&#x5F15;&#x64CE;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;](https://github.com/YuArtian/yuartian.github.io/blob/master/.gitbook/assets/v8-gong-zuo-liu-cheng.jpg?raw=true)
 
 ## TL;DR
 

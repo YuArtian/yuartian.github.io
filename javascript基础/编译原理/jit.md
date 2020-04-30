@@ -13,7 +13,7 @@
 
 解释器（Ignition）和 优化编译器（Turbofan）
 
-![](../../.gitbook/assets/v8-gong-zuo-liu-cheng.png)
+![](https://github.com/YuArtian/yuartian.github.io/blob/master/.gitbook/assets/v8-gong-zuo-liu-cheng.png?raw=true)
 
 ## 解释执行
 
