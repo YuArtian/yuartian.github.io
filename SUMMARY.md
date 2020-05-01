@@ -23,7 +23,8 @@
   * [尾调用和尾递归](javascript基础/函数/尾调用和尾递归.md)
 * [继承](javascript基础/继承.md)
 * [Set 和 Map](javascript基础/Set和Map.md)
-* [扩展运算符](javascript基础/扩展运算符.md)
+* [表达式和运算符](javascript基础/表达式和运算符/README.md)
+  - [展开运算符](javascript基础/表达式和运算符/展开运算符.md)
 * [Proxy](javascript基础/proxy.md)
 * [Reflect](javascript基础/Reflect.md)
 
