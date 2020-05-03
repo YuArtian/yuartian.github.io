@@ -16,7 +16,12 @@
 * [基本类型](javascript基础/基本类型/README.md)
   * [String](javascript基础/基本类型/string.md)
   * [Symbol](javascript基础/基本类型/symbol.md)
+  * [number](javascript基础/基本类型/number.md)
 * [对象](javascript基础/对象/README.md)
+  - [Object.create](javascript基础/对象/Object.create.md)
+  - [Object.toString](javascript基础/对象/Object.toString.md)
+  - [Object.valueOf](javascript基础/对象/Object.valueOf.md)
+* [类型转换](javascript基础/对象/类型转换.md)
 * [函数](javascript基础/函数/README.md)
   * [箭头函数](javascript基础/函数/箭头函数.md)
   * [IIFE](javascript基础/函数/iife.md)
@@ -28,13 +33,28 @@
 * [Proxy](javascript基础/proxy.md)
 * [Reflect](javascript基础/Reflect.md)
 
+## HTML
+
+- [HTML](/HTML/README.md)
+
 ## 设计模式与前端架构
 
 - [设计模式](设计模式与前端架构/设计模式/README.md)
+  
   - [观察者模式](设计模式与前端架构/设计模式/观察者模式/README.md)
+    
+    - [观察者模式](设计模式与前端架构/设计模式/观察者模式/观察者模式.md)
+    
     - [发布订阅模式](设计模式与前端架构/设计模式/观察者模式/发布订阅模式.md)
+  
+- [MVVM](设计模式与前端架构/MVVM.md)
 
 ## 框架
 
 - [Vue](框架/Vue/README.md)
   - [实现一个Vue](框架/Vue/实现一个Vue.md)
+  - [双向绑定实现](框架/Vue/双向绑定实现.md)
+
+## 面试题
+
+- [面试题](/面试题/README.md)

@@ -251,8 +251,6 @@ Vue 完整实现详情，请看 [Vue实现](../框架/Vue/实现一个Vue.md)
   });
 
   demo.$watch('text', str => p.innerHTML = str);
-
-
 </script>
 ```
 
