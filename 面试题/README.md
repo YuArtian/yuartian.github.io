@@ -2,7 +2,7 @@
 
 # 1
 
-```
+```js
 var test = (function(i){
   return function(){
     alert(i*=2)
@@ -38,13 +38,19 @@ function getName () {
   console.log('5')
 }
 
-Foo.getName()//2
-getName()//4
-Foo().getName()//1
-getName()//1
-new Foo.getName()//2
-new Foo().getName()//3
-new new Foo().getName()//3
+Foo.getName()
+getName()
+Foo().getName()
+getName()
+new Foo.getName()
+new Foo().getName()
+new new Foo().getName()
+
+
+
+
+
+//2 4 1 1 2 3 3
 ```
 
 注意 [运算符优先级](../javascript基础/表达式和运算符/README.md#运算符优先级) 的问题
@@ -68,12 +74,21 @@ Fn.prototype = {
   }
 }
 
-A()//1
-Fn.A()//1
-Fn().A()//2
-new Fn.A()//1
-new Fn().A()//3
-new new Fn().A()//Error A is not a constructor
+A()
+Fn.A()
+Fn().A()
+new Fn.A()
+new Fn().A()
+new new Fn().A()
+
+
+
+
+
+
+
+
+//1 1 2 1 3 Error A is not a constructor
 ```
 
 注意箭头函数不能 new
@@ -98,6 +113,15 @@ var m = y.z
 m(4)
 y.z(5)
 console.log('x, y.x',x, y.x)
+
+
+
+
+
+
+
+
+
 //x 7
 //x 10
 //x, y.x 16 15
@@ -118,6 +142,15 @@ function fn () {
 fn(3)
 fn(4)
 console.log('outer x,y',x,y)
+
+
+
+
+
+
+
+
+
 
 //inner 2 1
 //y 5
@@ -149,6 +182,7 @@ setTimeout(() => {
   console.log(8)
 },15)
 console.log(9)
+
 //2
 //4
 //'aa'
@@ -163,16 +197,16 @@ console.log(9)
 
 # 7
 
-```
+```js
 var a = ?
- if (a == 1 && a == 2 && a == 3) {
-   console.log('验证通过')
- }
+    if (a == 1 && a == 2 && a == 3) {
+      console.log('验证通过')
+    }
 ```
 
 对象转换为数字
 
-## Symbol
+## Symbol.toPrimitive
 
 ```js
 var a = {
@@ -235,7 +269,9 @@ Object.defineProperty(window, 'a',{
 
 ```js
 var a = new Proxy({i: 0}, {
-  get: function(target){
+  get: function(target, key){
+    console.log(key)// Symbol(Symbol.toPrimitive)
+    //隐式转换时，会使用Symbol.toPrimitive上的函数，所以这里应该要返回一个函数
     return () => target.i += 1
   }
 })

@@ -24,7 +24,7 @@ Virtual DOM 除了它的数据结构的定义，映射到真实的 DOM 实际上
 
 同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码
 
-![生命周期]()
+![生命周期](https://github.com/YuArtian/yuartian.github.io/blob/book/.gitbook/assets/vuelifecycle.png?raw=true)
 
 #### beforeCreate & created
 
