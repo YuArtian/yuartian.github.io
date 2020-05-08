@@ -15,3 +15,17 @@ webpack 编译模块的基本流程：
    3. 最终会得到一颗依赖树
 5. 最后调用`compilation.seal` render 模块，整合各个依赖项，最后输出一个或多个chunk；
 
+
+
+
+
+# 插件
+
+DefinePlugin
+
+> https://webpack.js.org/plugins/define-plugin/
+
+DefinePlugin允许您创建可以在编译时配置的全局常量。这对于在开发版本和生产版本之间允许不同的行为很有用。如果在开发版本中而不是生产版本中执行日志记录，则可以使用全局常量来确定是否进行日志记录。那就是DefinePlugin发光的地方，进行设置并忘记它的开发和生产构建规则
+
+
+
