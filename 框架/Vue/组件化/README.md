@@ -83,6 +83,18 @@ Vue.prototype._init = function (options?: Object) {
 
 ### 组件注册
 
+#### 全局注册
+
+```js
+Vue.component('demo',{})
+```
+
+内部调用 Vue.extend 返回一个 vue 的经过扩展的子类
+
+extend 方法实现继承，所以所有子类的 vue 实例组件都可以通过原型链找到注册的全局组件
+
+#### 局部注册
+
 局部注册和全局注册不同的是，只有该类型的组件才可以访问局部注册的子组件，而全局注册是扩展到 `Vue.options` 下
 
 所以在所有组件创建的过程中，都会从全局的 `Vue.options.components` 扩展到当前组件的 `vm.$options.components` 下，这就是全局注册的组件能被任意使用的原因
