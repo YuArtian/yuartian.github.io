@@ -67,10 +67,35 @@ this._modules = new ModuleCollection(options)
 ModuleCollection 构造函数执行 register 方法，注册生成模块（Module），再递归添加子模块
 
 ```js
-
+export default class ModuleCollection {
+  constructor (rawRootModule) {
+    // register root module (Vuex.Store options)
+    this.register([], rawRootModule, false)
+  }
+  ...
+}
 ```
 
+```js
+register (path, rawModule, runtime = true) {
+  const newModule = new Module(rawModule, runtime)
+  if (path.length === 0) {
+    this.root = newModule
+  } else {
+    const parent = this.get(path.slice(0, -1))
+    parent.addChild(path[path.length - 1], newModule)
+  }
 
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, (rawChildModule, key) => {
+      this.register(path.concat(key), rawChildModule, runtime)
+    })
+  }
+}
+```
+
+** register 的递归方法，依靠 path 记录树状结构的路径，利用 Array.reduce 方法寻找到子节点正确的位置 **
 
 Module 类代表一个模块
 
