@@ -1,0 +1,2 @@
+requestAnimationFrame 采用系统时间间隔，保持最佳绘制效率
+
