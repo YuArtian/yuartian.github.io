@@ -4,7 +4,8 @@
     "expandable-chapters",
     "chapter-fold",
     "splitter",
-    "anchor-navigation-ex"
+    "anchor-navigation-ex",
+    "summary"
   ],
   "pluginsConfig": {
     "anchor-navigation-ex": {
