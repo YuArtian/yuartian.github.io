@@ -1,0 +1,51 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  packages/main:
+    dependencies:
+      qiankun:
+        specifier: ^2.10.16
+        version: 2.10.16
+
+packages:
+
+  /@babel/runtime@7.23.6:
+    resolution: {integrity: sha512-zHd0eUrf5GZoOWVCXp6koAKQTfZV07eit6bGPmJgnZdnSAvvZee6zniW2XMF7Cmc4ISOOnPy3QaSiIJGJkVEDQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
+
+  /import-html-entry@1.15.2:
+    resolution: {integrity: sha512-XXtXpGAq811qBgFVdOU6LoOC67rirwv7qwz/zuz1KxbpAM7QYX6kMvELOdSfhjZ9ntQnsdEOXT2zV7xMYaky6w==}
+    dependencies:
+      '@babel/runtime': 7.23.6
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
+
+  /qiankun@2.10.16:
+    resolution: {integrity: sha512-Q3tSVUrPnzx8ckEOKIoPnhb5LE28FPKyan/r6jEuGJGqTbIy+3rp6E2/KfU82ZI4yZpef9LFTrnxdj49jAEsmw==}
+    dependencies:
+      '@babel/runtime': 7.23.6
+      import-html-entry: 1.15.2
+      lodash: 4.17.21
+      single-spa: 5.9.5
+    dev: false
+
+  /regenerator-runtime@0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+    dev: false
+
+  /single-spa@5.9.5:
+    resolution: {integrity: sha512-9SQdmsyz4HSP+3gs6PJzhkaMEg+6zTlu9oxIghnwUX3eq+ajq4ft5egl0iyR55LAmO/UwvU8NgIWs/ZyQMa6dw==}
+    dev: false
