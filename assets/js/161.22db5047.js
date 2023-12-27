@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[161],{525:function(t,e,n){"use strict";n.r(e);var s=n(45),r=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("requestAnimationFrame 采用系统时间间隔，保持最佳绘制效率")])])}),[],!1,null,null,null);e.default=r.exports}}]);
