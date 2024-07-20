@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 实现 groupBy 方法，对数组按照指定的 key 进行分组
+      const arr = [
+        { name: "a", age: 1, addr: { city: "beijing" }, sex: "male" },
+        { name: "b", age: 2, addr: { city: "shanghai" }, sex: "female" },
+        { name: "c", age: 2, addr: { city: "xx" }, sex: "female" },
+      ];
+
+      function groupBy(arr, generateKey) {
+        if (typeof generateKey === "string") {
+          const propName = generateKey;
+          generateKey = (item) => item[propName];
+        }
+        const result = {};
+        for (const item of arr) {
+          const key = generateKey(item);
+          if (!result[key]) {
+            result[key] = [];
+          }
+          result[key].push(item);
+        }
+        return result;
+      }
+      console.log("result1:::", groupBy(arr, "age"));
+      console.log(
+        "result2:::",
+        groupBy(arr, (item) => item.age),
+      );
+      console.log(
+        "result3:::",
+        groupBy(arr, (item) => `${item.age}_${item.sex}`),
+      );
+    </script>
+  </body>
+</html>

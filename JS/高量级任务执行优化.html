@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        width: 100px;
+        height: 50px;
+        background-color: #f40;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+      }
+      #boll-container {
+        margin-top: 20px;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        border: 1px solid #000;
+      }
+      #boll {
+        width: 50px;
+        height: 50px;
+        background-color: #f40;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+      }
+      /* boll 在 boll-container 里运动 */
+      @keyframes move {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 0;
+          left: 250px;
+        }
+        50% {
+          top: 250px;
+          left: 250px;
+        }
+        75% {
+          top: 250px;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+
+      #boll {
+        animation: move 5s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    高量级任务执行优化
+    https://www.bilibili.com/video/BV1rc411b7Pz/?spm_id_from=333.337.search-card.all.click&vd_source=825473bb0b044dbfeca73fca932e0c5b 
+   -->
+    <div>
+      一共耗时
+      <span id="time"></span>
+    </div>
+    <div id="btn">点击按钮执行1000次任务</div>
+    <div id="boll-container">
+      <div id="boll"></div>
+    </div>
+  </body>
+  <script>
+    // 异步执行高量级任务并且统计执行时间
+    btn.addEventListener("click", async function () {
+      const star = Date.now();
+      for (let i = 0; i < 1000; i++) {
+        await runTask(() => {
+          let j = 0;
+          while (j++ <= 1000) {
+            // do nothing
+            console.log("hard working::", j);
+          }
+        });
+      }
+      const end = Date.now();
+      time.innerHTML = `${end - star}ms`;
+    });
+    function _runIdleTask(task, callback) {
+      requestIdleCallback((idle) => {
+        if (idle.timeRemaining() > 0) {
+          task();
+          callback();
+        } else {
+          _runIdleTask(task, resolve);
+        }
+      });
+    }
+    function _runRAFTask(task, callback) {
+      let start = Date.now();
+      requestAnimationFrame(() => {
+        if (Date.now() - start < 16.6) {
+          task();
+          callback();
+        } else {
+          _runRAFTask(task, callback);
+        }
+      });
+    }
+    function runTask(task) {
+      // 直接执行----阻塞
+      // task();
+      // 微任务------阻塞，因为微任务队列需要一次性执行完
+      /* return new Promise((resolve) => {
+        console.log("使用微任务");
+        task();
+        resolve();
+      }); */
+      // 宏任务------不阻塞 但是卡顿
+      // 是因为宏任务队列是一个一个执行的，每次取一个任务执行
+      // 如果渲染时间到达就会渲染，然后再取下一个任务，如此循环
+      // 但是不同浏览器判断是否应该渲染，策略不同，如果延迟队列中的任务过多，有可能推迟渲染，导致卡顿
+
+      /* return new Promise((resolve) => {
+        setTimeout(() => {
+          task();
+          resolve();
+        }, 0);
+      }); */
+
+      // 使用 requestAnimationFrame 一定会阻塞
+      // raf 在下一次渲染之前执行，但是要等js执行完才会渲染
+      /* return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+          console.log("requestAnimationFrame");
+          task();
+          resolve();
+        });
+      }); */
+      // 使用 requestIdleCallback 不阻塞 不卡顿
+
+      /* return new Promise((resolve) => {
+        _runIdleTask(task, resolve);
+      }); */
+
+      // 也可以使用 requestAnimationFrame 加 时间计算 增强兼容性
+      return new Promise((resolve) => {
+        _runRAFTask(task, resolve);
+      });
+    }
+  </script>
+</html>

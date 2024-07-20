@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BFC -->
+    <!-- <div
+      style="float: left; height: 500px; width: 500px; background-color: red"
+    >
+      <div
+        style="float: left; width: 100px; height: 100px; background-color: #fff"
+      >
+        float
+      </div>
+      <div
+        style="
+          height: 200px;
+          width: 200px;
+          background-color: blue;
+          display: inline-block;
+        "
+      >
+        normal
+      </div>
+      <div
+        style="float: left; width: 100px; height: 100px; background-color: #333"
+      >
+        float
+      </div>
+    </div> -->
+    <!-- 清除浮动 -->
+    <!-- <div
+      style="width: 500px; background-color: red; border: 1px solid #000"
+      class="father"
+    >
+      <div
+        style="float: left; width: 100px; height: 100px; background-color: blue"
+      >
+        1111111
+      </div>
+    </div> -->
+    <style>
+      .a {
+        height: 500px;
+        width: 500px;
+        background-color: red;
+        margin-top: 200px;
+        /* display: flow-root; */
+        overflow: hidden;
+      }
+      .b {
+        margin-top: 100px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+    <div class="a">
+      <!-- a -->
+      <div class="b">b</div>
+    </div>
+  </body>
+</html>

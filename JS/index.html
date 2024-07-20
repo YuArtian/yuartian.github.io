@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      const arr = [1, 2, 3, 3, 3, 4];
+      const arr2 = [
+        { a: 1, b: 1 },
+        { a: 1, b: 1 },
+      ];
+      const arr3 = [
+        { a: 1, b: undefined },
+        { a: 1, b: undefined },
+      ];
+      const arr4 = [
+        { a: 1, b: undefined },
+        { a: 1, c: undefined },
+      ];
+      console.log("_.uniq(arr4)", _.uniq(arr2));
+    </script>
+  </body>
+</html>

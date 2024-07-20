@@ -4,12 +4,12 @@ layout: home
 
 hero:
   name: "Interview HandBook"
-  text: "A VitePress Site"
+  text: ""
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 打包构建
+      link: /打包构建-vite-webpack-rollup
     - theme: alt
       text: API Examples
       link: /api-examples

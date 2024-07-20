@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="counter"></div>
+    <script type="text/javascript">
+      /**
+       * 使用 setInterval 和 setTimeout 实现倒计时都会因为浏览器事件循环机制导致倒计时不准确
+       * 或者跳秒的情况
+       * 使用 requestAnimationFrame 可以保证倒计时的准确性
+       * worker 线程也可以实现倒计时
+       */
+      console.log("倒计时!!!!!");
+      counter.innerHTML = "倒计时开始";
+      const d1 = new Date("2024-08-01T01:01:01");
+      console.log("d1:::", d1);
+      // 模拟大量计算
+      function doLotsOfStuff() {
+        let j = 0;
+        while (j++ <= 10000) {
+          // do nothing
+          console.log("hard working::", j);
+        }
+      }
+      function getRemainingTime(time) {
+        if (!time) return;
+        return {
+          days: Math.floor(time / (24 * 60 * 60 * 1000)),
+          hours: Math.floor((time % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)),
+          minutes: Math.floor((time % (60 * 60 * 1000)) / (60 * 1000)),
+          seconds: Math.floor((time % (60 * 1000)) / 1000),
+        };
+      }
+      function countDownRAF(target) {
+        if (!target) return;
+        const now = Date.now();
+        const diff = target - now;
+        if (diff <= 0) {
+          console.log("倒计时结束");
+          counter.innerHTML = "倒计时结束";
+          return;
+        }
+        const remainingTime = getRemainingTime(diff);
+        counter.innerHTML = `${remainingTime.days}天${remainingTime.hours}小时${remainingTime.minutes}分钟${remainingTime.seconds}秒`;
+        // doLotsOfStuff();
+        if (diff > 0) {
+          requestAnimationFrame(() => countDownRAF(target));
+        }
+      }
+      // countDownRAF(d1.valueOf());
+      function countDownTimeout(target) {
+        console.log("countDownTimeout", target);
+        if (!target) return;
+        const now = Date.now();
+        const diff = target - now;
+        console.log("diff", diff);
+        if (diff <= 0) {
+          console.log("倒计时结束");
+          counter.innerHTML = "倒计时结束";
+          return;
+        }
+        const remainingTime = getRemainingTime(diff);
+        counter.innerHTML = `${remainingTime.days}天${remainingTime.hours}小时${remainingTime.minutes}分钟${remainingTime.seconds}秒`;
+        doLotsOfStuff();
+        if (diff > 0) {
+          setTimeout(() => {
+            console.log("setTimeout");
+            countDownTimeout(target);
+          }, 1000);
+        }
+      }
+      // countDownTimeout(d1.valueOf());
+
+      function countDownWorker() {
+        const worker = new Worker("countDownWorker.js");
+        worker.postMessage(d1.valueOf());
+        worker.onmessage = function (e) {
+          console.log("worker onmessage", e.data);
+          const remainingTime = getRemainingTime(e.data);
+          counter.innerHTML = `${remainingTime.days}天${remainingTime.hours}小时${remainingTime.minutes}分钟${remainingTime.seconds}秒`;
+        };
+      }
+      countDownWorker();
+    </script>
+  </body>
+</html>
